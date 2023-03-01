@@ -1,0 +1,30 @@
+<?php
+echo " Hoje é dia " . date('d/m/Y');
+echo "<br> Agora são " . date('H:i:s');
+?>
+
+// o . serve para concatenação
+// o br deve ser escrito dentro das aspas
+
+<?php
+//muda a configuração da hora para o horário do Brasil 
+ date_default_timezone_set('America/Sao_Paulo');
+echo " Hoje é dia " . date('d/m/y') . ",";
+//horário no tipo am
+echo "<br> Agora são " . date('h:i:s a');
+//Para horário Pm, o a deve ser maiúsculo 
+?>
+
+//Para poder exibir o dia da semana:
+// Array com os dias da semana
+ $diasemana = array('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado');
+
+ // Aqui podemos usar a data atual ou qualquer outra data no formato Ano-mês-dia (2014-02-28)
+ $data = date('Y-m-d');
+
+ // Varivel que recebe o dia da semana (0 = Domingo, 1 = Segunda ...)
+ $diasemana_numero = date('w', strtotime($data));
+
+ // Exibe o dia da semana com o Array
+ echo $diasemana[$diasemana_numero];
+?>
