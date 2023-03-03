@@ -1,3 +1,4 @@
+//Primeiro código
 <?php
 echo " Hoje é dia " . date('d/m/Y');
 echo "<br> Agora são " . date('H:i:s');
@@ -10,7 +11,7 @@ echo "<br> Agora são " . date('H:i:s');
 //muda a configuração da hora para o horário do Brasil 
  date_default_timezone_set('America/Sao_Paulo');
 echo " Hoje é dia " . date('d/m/y') . ",";
-//horário no tipo am
+//horário no tipo am, o A é maiúsculo
 echo "<br> Agora são " . date('h:i:s a');
 //Para horário Pm, o a deve ser maiúsculo 
 ?>
@@ -28,3 +29,63 @@ echo "<br> Agora são " . date('h:i:s a');
  // Exibe o dia da semana com o Array
  echo $diasemana[$diasemana_numero];
 ?>
+
+//construção de um calendário: 
+//título da página dentro da tag php
+<h1><?php echo "Calendário 3C"; ?> </h1>
+//criação das tabelas, imprimindo uma linha com 7 colunas
+
+<?php function linha(){
+    echo "<tr>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+             <td></td>
+         </tr>";
+}
+
+//iniciamos no dia primeiro e usamos o while para
+fazer um laço que se repetirá até o dia 31. O array $semana é usado para colocar
+os dias da semana e garantimos que ele não terá mais que sete dias usando o if. A
+função array_push() adiciona mais um valor em nosso array e dentro do if o
+array é reiniciado.
+
+function calendario(){
+    $dia = 1;
+    $semana = array();
+
+while ($dia <= 31) {
+array_push($semana, $dia);
+if (count($semana) == 7) {
+linha($semana);
+$semana = array(); }
+$dia++;
+}
+}
+?>
+//criação do caebçalho da tabela, com os nomes dos dias da semana
+<br>
+ <table border="1">
+ <tr>
+ <th>Dom</th>
+ <th>Seg</th>
+ <th>Ter</th>
+ <th>Qua</th>
+ <th>Qui</th>
+ <th>Sex</th>
+ <th>Sáb</th>
+ </tr>
+ //criação das linhas para colocar os dias 
+ <?php linha(); ?>
+ <?php linha(); ?>
+ <?php linha(); ?>
+ <?php linha(); ?>
+ <?php linha(); ?>
+ 
+ </table>
+
+
+
