@@ -1,37 +1,29 @@
 <h1><?php echo "Calendario 3C"; ?></h1>
 <?php date_default_timezone_set('America/Sao_Paulo');
 
-$hoje = date('d/m/Y');
-if ($dia == $hoje){
-	echo "<strong> $hoje </strong>";
-}
-
-$hora = date('h');
 echo "<br> Agora são " . date('H:i:s') . "<br>";
-
-	if (($hora >= 5) && ($hora <=12)){
+$hora = date('H');
+	if ($hora >= 5 && $hora <=12){
 		echo "Bom dia!";
 	}
-	if (($hora > 12) && ($hora <=17)){
+	if ($hora > 12 && $hora <=17){
 		echo "Boa tarde!";
 	}	
-	if (($hora > 17) && ($hora <5)){
+	if ($hora > 17 && $hora <5){
 		echo "Boa noite!";
 	}
-
-
 ?>
-<?php function linha($semana)
-{
-	echo "<tr>";
-	for ($i = 0; $i <= 6; $i++) {
-		if (isset($semana[$i])) {
-			echo "<td>{$semana[$i]}</td>";
-		} else {
-			echo "<td></td>";
-		}
-	}
-	echo "</tr>";
+
+<?php function linha($semana){
+  echo "<tr>";
+  for ($i = 0; $i <= 6; $i++) {
+    if (isset($semana[$i])) {
+    echo "<td>{$semana[$i]}</td>";
+ } else {
+   echo "<td></td>";
+ }
+}
+  
 }
 
 function calendario()
@@ -46,8 +38,8 @@ function calendario()
 		}
 		$dia++;
 	}
-	
-}
+	linha($semana);
+	}
 ?>
 
 <table border="1">
