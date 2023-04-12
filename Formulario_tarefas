@@ -1,3 +1,4 @@
+
 <html>
     <head>
 <title> Gerenciador de Tarefas</title>
@@ -9,20 +10,34 @@
     <fieldset>
 <legend> Nova tarefa</legend>
 <label>
-   Tarefa:
-   <input type="text" name="nome" />
+   <div style= "width:100">Tarefa:</div>
+   <input type="text" name="nomeTarefa" />
+   <br>
+   <?php
+if (isset($_GET['nomeTarefa'])) {
+echo "Tarefa informada: " . $_GET['nomeTarefa'];
+}
+
+?>
+<br>
 </label>
-<input type="submit" value="Cadastrar" />
 <br>
-<br>
+
 <label>
-   Prazo:
-   <input type="date" name="nome" />
+<div style= "width:100">Descrição:</div>
+   <input type="text" name="descricao" />
+</label>
+<br>
+
+<label>
+   <div style= "width:100"> Prazo: </div>
+   <input type="date" name="data" />
 </label>
 <input type="submit" value="Cadastrar" />
 </fieldset>
-</form>
+<br>
 
+</form>
 
 </body>
 </html>
