@@ -1,4 +1,5 @@
 
+
 <html>
     <head>
 <title> Gerenciador de Tarefas</title>
@@ -12,13 +13,6 @@
 <label>
    <div style= "width:100">Tarefa:</div>
    <input type="text" name="nomeTarefa" />
-   <br>
-   <?php
-if (isset($_GET['nomeTarefa'])) {
-echo "Tarefa informada: " . $_GET['nomeTarefa'];
-}
-
-?>
 <br>
 </label>
 <br>
@@ -36,6 +30,16 @@ echo "Tarefa informada: " . $_GET['nomeTarefa'];
 <input type="submit" value="Cadastrar" />
 </fieldset>
 <br>
+<?php
+if (isset($_GET['nomeTarefa'])) {
+echo "Tarefa informada: " . $_GET['nomeTarefa'] . "<br>";
+}
+
+if (isset($_GET['descricao'])) {
+echo "Descrição da tarefa: " . $_GET['descricao'];
+}
+
+?>
 
 </form>
 
