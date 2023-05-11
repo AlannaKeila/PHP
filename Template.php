@@ -36,8 +36,7 @@
 <label>
  Este é um contato favorito? 
 <br>
-<input type="checkbox" name="favorito" value="Sim">SIM <br/> 
-<input type="checkbox" name="favorito" value="Não">NÃO
+<input type="checkbox" name="favorito" value="Sim">Contato Favorito<br/> 
 </label>
 <br>
 <input type="submit" value="Adicionar" />
@@ -60,7 +59,7 @@
 <td><?php echo $tarefa['telefone']; ?> </td>
 <td><?php echo $tarefa['email']; ?> </td>
 <td><?php echo $tarefa['descricao']; ?> </td>
-<td><?php echo $tarefa['nascimento']; ?> </td>
+<td><?php echo $tarefa['data']; ?> </td>
 <td><?php echo $tarefa['favorito']; ?> </td>
 </tr>
 <?php endforeach; ?>
